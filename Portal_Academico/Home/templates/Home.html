@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Portal Acadêmico</title>
+    {% load static %}
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="{% static 'Home/css/styles.css' %}">
+</head>
+<body>
+    <!-- Menu Superior -->
+    <header class="header">
+        <div class="logo">
+            <h1>Portal Acadêmico</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Notificações</a></li>
+            </ul>
+        </nav>
+        <!-- Botão de Menu (visível em telas pequenas) -->
+        <div class="menu-toggle" onclick="toggleSidebar()">&#9776; Menu</div>
+    </header>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Estudantes</a></li>
+            <li><a href="#">Professores</a></li>
+            <li><a href="#">Configurações</a></li>
+        </ul>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <section class="overview">
+            <h2>Visão Geral</h2>
+            <p>Bem-vindo ao seu portal acadêmico! Aqui você pode acompanhar seu desempenho e atividades.</p>
+        </section>
+
+        <section class="upcoming-assignments">
+            <h3>Próximas Tarefas
+                <button onclick="toggleSection('assignments')">Mostrar/Ocultar</button>
+            </h3>
+            <ul id="assignments">
+                <li>Tarefa 1 - Data de entrega: 15/05</li>
+                <li>Tarefa 2 - Data de entrega: 18/05</li>
+                <li>Tarefa 3 - Data de entrega: 20/05</li>
+            </ul>
+        </section>
+
+        <section class="recent-grades">
+            <h3>Notas Recentes</h3>
+            <ul>
+                <li>Matemática: 9.0</li>
+                <li>Física: 8.5</li>
+                <li>Química: 7.5</li>
+            </ul>
+        </section>
+
+        <section class="notifications">
+            <h3>Notificações
+                <button onclick="toggleSection('notifications')">Mostrar/Ocultar</button>
+            </h3>
+            <ul id="notifications">
+                <li>Aviso sobre nova tarefa de Matemática.</li>
+                <li>Reunião de orientação marcada para 12/05.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2025 Portal Acadêmico. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="{% static 'Home/js/script.js' %}"></script>
+</body>
+</html>
